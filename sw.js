@@ -1,4 +1,4 @@
-const CACHE = "cultureland-prototype-v25";
+const CACHE = "cultureland-prototype-v26";
 const CORE = [
   "/", "/index.html", "/styles.css", "/app.js", "/usage-data.js", "/nearby-data.js",
   "/walking-routes.js", "/route-navigation.js", "/route-guide.js", "/manifest.webmanifest",
