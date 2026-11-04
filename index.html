@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#222a40" />
+    <meta name="description" content="컬쳐랜드 모바일 홈 화면 시제품" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>컬쳐랜드</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="header-main">
+          <a class="brand" href="/" aria-label="컬쳐랜드 홈">
+            <img src="/assets/logo.png" alt="CULTURE LAND" />
+          </a>
+          <div class="header-actions">
+            <a class="attendance" href="https://m.cultureland.co.kr/evn/evnTodyLst.do" aria-label="출석">
+              <img src="/assets/attendance.png" alt="" />
+              <span>출첵</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="전체 메뉴 열기" aria-expanded="false" aria-controls="menu-panel">
+              <img src="/assets/menu.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <nav class="top-nav" aria-label="주 메뉴">
+          <a class="active" href="/" aria-current="page">컬쳐캐쉬</a>
+          <a href="https://m.cultureland.co.kr/csh/cshMain.do">충전</a>
+          <a href="https://m.cultureland.co.kr/gft/gftMain.do">구매/선물</a>
+          <a href="https://m.cultureland.co.kr/trd/trdMain.do">교환소</a>
+          <a href="https://m.cultureland.co.kr/evn/evnTodyLst.do">이벤트</a>
+        </nav>
+      </header>
+
+      <main id="home-view">
+        <section class="hero" aria-label="추천 이벤트">
+          <div class="hero-window" id="hero-window">
+            <div class="hero-track" id="hero-track"></div>
+            <span class="hero-count" id="hero-count">1 / 5</span>
+          </div>
+        </section>
+
+        <div class="content">
+          <section class="login-card" aria-label="로그인">
+            <div>
+              <p>상품권의 모든 것,</p>
+              <strong>컬쳐랜드와 함께</strong>
+            </div>
+            <a href="https://m.cultureland.co.kr/mmb/loginMain.do">로그인 하러 가기</a>
+          </section>
+
+          <section class="quick-grid" aria-label="자주 쓰는 서비스">
+            <a class="quick-tile charge-tile" href="https://m.cultureland.co.kr/csh/cshMain.do">
+              <span>컬쳐랜드상품권<br />충전하기</span>
+              <img src="/assets/charge.png" alt="" />
+            </a>
+            <a class="quick-action" href="https://m.cultureland.co.kr/convs/convsMain.do">
+              <img src="/assets/convert.svg" alt="" /><span>전환</span>
+            </a>
+            <a class="quick-action" href="https://m.cultureland.co.kr/cpn/cpnMain.do">
+              <img src="/assets/coupon.svg" alt="" /><span>쿠폰</span>
+            </a>
+            <a class="quick-action" href="https://m.cultureland.co.kr/shp/shpMain.do">
+              <img src="/assets/quick-use.svg" alt="" /><span>바로사용</span>
+            </a>
+            <a class="quick-tile reserve-tile" href="https://m.cultureland.co.kr/csh/cshMain.do">
+              <span>예약충전</span>
+              <img src="/assets/three-percent.png" alt="" />
+            </a>
+            <a class="quick-action" href="https://m.cultureland.co.kr/tgl/barcodeBrandList.do">
+              <img src="/assets/barcode.png" alt="" /><span>바코드 결제</span>
+            </a>
+            <a class="quick-action" href="https://m.cultureland.co.kr/cpn/googleApp.do">
+              <img src="/assets/google-play.png" alt="" /><span>Google</span>
+            </a>
+            <a class="quick-action" href="https://m.cultureland.co.kr/evn/evnTodyLst.do">
+              <span class="download-icon" aria-hidden="true">⇩</span><span>버튼 누르면<br />쿠폰지급</span>
+            </a>
+          </section>
+
+          <section class="hot-section" aria-labelledby="hot-title">
+            <h2 id="hot-title">컬쳐랜드 핫 이슈</h2>
+            <img class="hot-banner" src="/assets/hot-promo.png" alt="룰렛·사다리·박스까지 한 번에, 컬쳐캐쉬 당첨 기회" />
+          </section>
+        </div>
+
+        <section class="services-section" aria-labelledby="services-title">
+          <div class="services-row">
+            <div class="services-heading">
+              <span>HOT</span>
+              <h2 id="services-title">요즘 뜨는<br />서비스</h2>
+            </div>
+            <img src="/assets/service-smallpay.png" alt="소액결제로 상품권과 캐쉬 모두 결제 가능" />
+            <img src="/assets/service-coupang.png" alt="쿠팡캐시 전환하고 로켓배송 이용" />
+            <img src="/assets/service-event.png" alt="신규 이벤트 카드 신청 시 혜택" />
+            <img src="/assets/service-daily.png" alt="매일 참여하고 컬쳐캐쉬 받기" />
+          </div>
+        </section>
+
+        <div class="content content-bottom">
+          <div class="social-links" aria-label="컬쳐랜드 소셜 채널">
+            <a href="https://www.instagram.com/cultureland_official/"><img src="/assets/social-instagram.png" alt="" />인스타그램</a>
+            <a href="https://m.blog.naver.com/cultureland_official"><img src="/assets/social-blog.png" alt="" />네이버블로그</a>
+            <a href="https://m.blog.naver.com/cultureland_official?categoryNo=36"><img src="/assets/social-webtoon.png" alt="" />웹툰보기</a>
+          </div>
+          <footer class="footer">
+            <p><strong>고객센터</strong> (평일 08:00 ~ 17:00)</p>
+            <a href="tel:1577-2111">1577-2111</a>
+            <small>© (주)한국문화진흥. All Rights Reserved.</small>
+          </footer>
+        </div>
+      </main>
+
+      <main class="use-view" id="use-view" hidden>
+        <div class="use-content">
+          <h1 class="sr-only">사용처 찾기</h1>
+          <form class="usage-search" id="merchant-form" role="search">
+            <label class="sr-only" for="merchant-input">사용처명 또는 질문 검색</label>
+            <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <input id="merchant-input" type="search" placeholder="사용처나 궁금한 점 검색" autocomplete="off" enterkeyhint="search" />
+            <button class="sr-only" type="submit">검색</button>
+          </form>
+          <p class="search-example">예: CU에서 컬쳐랜드상품권을 어떻게 써요?</p>
+          <div class="category-chips" id="category-chips" aria-label="카테고리 검색"></div>
+          <p class="search-feedback" id="search-feedback" role="status" hidden></p>
+
+          <section class="merchant-section" aria-labelledby="online-title">
+            <div class="merchant-section-heading"><h2 id="online-title">온라인 사용처</h2><span id="online-count"></span></div>
+            <div class="online-grid" id="online-merchants"></div>
+          </section>
+
+          <section class="merchant-section" aria-labelledby="offline-title">
+            <div class="merchant-section-heading"><h2 id="offline-title">오프라인 사용처</h2><span id="offline-count"></span></div>
+            <div class="offline-list" id="offline-merchants"></div>
+          </section>
+
+        </div>
+      </main>
+
+      <main class="nearby-view" id="nearby-view" hidden>
+        <div class="nearby-content">
+          <div class="nearby-page-heading">
+            <a class="nearby-back" href="#use" aria-label="사용처 찾기로 돌아가기">‹</a>
+            <div><h1>내 주변 매장</h1></div>
+          </div>
+          <div class="nearby-location">
+            <span>기준 위치</span><strong>내 위치</strong>
+          </div>
+          <div class="nearby-map-panel" id="nearby-map-panel">
+            <div class="nearby-map" id="nearby-map" aria-label="내 주변 매장 지도"></div>
+            <button class="nearby-recenter" id="nearby-recenter" type="button" aria-label="내 위치로 이동" title="내 위치로 이동">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              내 위치
+            </button>
+            <p class="map-fallback" id="map-fallback" hidden>지도를 불러오지 못했어요. 아래 매장 목록을 이용해 주세요.</p>
+            <p class="map-caption" id="map-caption"></p>
+          </div>
+          <section class="nearby-results" aria-labelledby="nearby-results-title">
+            <div class="nearby-results-heading">
+              <h2 id="nearby-results-title">주변 매장</h2><span id="nearby-count"></span>
+              <a href="#nearby" id="nearby-show-all" hidden>전체 보기</a>
+            </div>
+            <div class="offline-list" id="nearby-list"></div>
+          </section>
+        </div>
+      </main>
+
+      <main class="route-view" id="route-view" hidden>
+        <div class="route-topbar">
+          <a id="route-back" class="route-back" href="#nearby" aria-label="내 주변 매장으로 돌아가기">‹</a>
+          <h1 id="route-store-name">매장 안내</h1>
+        </div>
+        <div class="route-content">
+          <div class="route-map-panel">
+            <div class="route-map" id="route-map" aria-label="선택한 매장까지의 도보 경로와 현재 위치"></div>
+            <div class="route-map-actions">
+              <button id="route-recenter" type="button">기준 위치</button>
+              <button id="route-fit" type="button">전체 경로</button>
+            </div>
+            <p class="route-map-unavailable" id="route-map-unavailable" hidden>지도를 불러오지 못했어요. 아래 경로 안내를 확인해 주세요.</p>
+          </div>
+          <section class="route-guide-card" aria-label="도보 경로 안내">
+            <div class="route-step-meta"><span id="route-step-count">1 / 1</span><span id="route-distance">0m</span></div>
+            <h2 id="route-instruction">경로를 불러오는 중...</h2>
+            <p id="route-location-status" role="status" hidden></p>
+            <button id="route-next-step" type="button">다음 안내</button>
+          </section>
+          <div class="route-summary"><strong id="route-exit"></strong><span id="route-target"></span></div>
+        </div>
+      </main>
+
+      <dialog class="merchant-dialog" id="merchant-dialog" aria-labelledby="detail-dialog-title">
+        <div class="merchant-dialog-header"><h2 id="detail-dialog-title">사용 안내</h2><button id="detail-close" type="button" aria-label="사용 안내 닫기">×</button></div>
+        <div class="merchant-dialog-body" id="usage-detail"></div>
+      </dialog>
+
+      <div class="promo-toast" id="promo-toast" role="status">
+        <span class="toast-ticket" aria-hidden="true">10,000</span>
+        <span><strong>공짜 응모로 매주 1만원 받기</strong><small>많이 참여할수록 당첨확률 UP!</small></span>
+        <button id="toast-close" type="button" aria-label="알림 닫기">×</button>
+      </div>
+
+      <nav class="bottom-nav" aria-label="하단 메뉴">
+        <a href="https://m.cultureland.co.kr/usecash/useCashMain.do"><img src="/assets/nav-coupon.svg" alt="" /><span>STRAW#</span></a>
+        <a href="https://m.cultureland.co.kr/usecash/useCashMain.do"><img src="/assets/nav-shop.svg" alt="" /><span>캐쉬사용</span></a>
+        <a class="active" id="home-nav" href="/" aria-current="page"><img src="/assets/nav-cash.svg" alt="" /><span>컬쳐캐쉬</span></a>
+        <a class="use-nav" id="use-nav" href="#use"><span class="use-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7.5h16v12H4zM4 7.5l2-3h12l2 3M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>사용</span></a>
+        <a href="https://m.cultureland.co.kr/game/gameMain.do"><img src="/assets/nav-game.svg" alt="" /><span>게임</span></a>
+        <a href="https://m.cultureland.co.kr/evn/evnTodyLst.do"><img src="/assets/nav-benefit.svg" alt="" /><span>혜택</span></a>
+      </nav>
+
+      <section class="menu-panel" id="menu-panel" aria-label="전체 메뉴" hidden>
+        <div class="menu-panel-header">
+          <img src="/assets/logo.png" alt="CULTURE LAND" />
+          <button id="menu-close" type="button" aria-label="전체 메뉴 닫기">×</button>
+        </div>
+        <div class="menu-panel-inner">
+          <div class="login-card">
+            <div><p>상품권의 모든 것,</p><strong>컬쳐랜드와 함께</strong></div>
+            <a href="https://m.cultureland.co.kr/mmb/loginMain.do">로그인 하러 가기</a>
+          </div>
+          <div class="menu-list">
+            <p class="menu-caption">모든 서비스</p>
+            <h3>컬쳐캐쉬</h3>
+            <a href="https://m.cultureland.co.kr/csh/cshMain.do"><strong>충전</strong><span>컬쳐랜드상품권, 휴대폰소액결제 등</span></a>
+            <a href="https://m.cultureland.co.kr/gft/gftMain.do"><strong>구매/선물</strong><span>컬쳐캐쉬 / 컬쳐랜드상품권 선물</span></a>
+            <a href="https://m.cultureland.co.kr/trd/trdMain.do"><strong>교환소</strong><span>카카오톡, 원스토어, 아이넘버</span></a>
+            <h3>캐쉬사용</h3>
+            <a href="https://m.cultureland.co.kr/convs/convsMain.do"><strong>전환</strong><span>Npay, 쿠팡캐시, SSG MONEY 등</span></a>
+            <a href="https://m.cultureland.co.kr/cpn/cpnMain.do"><strong>쿠폰</strong><span>SOOP 별풍선, 로블록스 등</span></a>
+            <a href="https://m.cultureland.co.kr/shp/shpMain.do"><strong>바로사용</strong><span>교보문고, 메가박스 등</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

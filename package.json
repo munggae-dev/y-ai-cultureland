@@ -1,0 +1,10 @@
+{
+  "name": "y-ai-cultureland-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check app.js && node --check usage-data.js && node --check nearby-data.js && node --check walking-routes.js && node --check route-navigation.js && node --check route-guide.js && node --check sw.js && node --check scripts/serve.mjs && node --test tests/*.test.js"
+  }
+}
